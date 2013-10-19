@@ -1,0 +1,355 @@
+/*Font-Face*/
+ @font-face {
+    font-family: Titillium;
+    src: url("fonts/Titillium-Regular.otf") format("opentype");
+}
+@font-face {
+    font-family: Titillium;
+    font-weight: bold;
+    src: url("fonts/Titillium-Semibold.otf") format("opentype");
+}
+html {
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-family: Titillium, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:18px;
+    width:100%;
+}
+h2 {
+    font-size:30px;
+    margin-bottom:20px;
+    color:#4c98af;
+}
+a:hover {
+    text-decoration:none;
+}
+.blue {
+    color:#4c98af;
+}
+.keywords {
+    display:inline-block;
+    background: #4c98af;
+    padding: 5px 5px;
+    color: #fff;
+    margin-left: 5px;
+    margin-bottom:10px;
+    border-radius: 18px;
+    opacity:0.6;
+}
+.placeKeywords {
+    font-size:15px;
+    display:inline-block;
+    background: #48BC97;
+    padding: 5px 5px;
+    color: #fff;
+    margin-left: 5px;
+    margin-bottom:10px;
+    border-radius: 14px;
+    opacity:0.6;
+}
+/*--------*/
+
+/* NAVBAR */
+
+/*--------*/
+ .bs-docs-nav {
+    background-color : white;
+    z-index:50;
+}
+.navbar-inverse {
+    border-color: white;
+}
+.navbar-inverse .navbar-nav>.active>a {
+    color:#999;
+    border-bottom:solid 3px #4c98af;
+}
+.navbar-inverse .navbar-nav>li>a:hover {
+    color:#4c98af;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover {
+    background-color : white;
+    color:#4c98af;
+}
+.navbar-nav>li>a {
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+/* Quick fix justified nav bar */
+ .navbar-nav.nav-justified {
+    display:table;
+}
+.navbar-nav.nav-justified > li {
+    float:none;
+    width:auto;
+}
+
+
+/*----------*/
+
+/* ABOUT ME */
+
+/*----------*/
+ #part-aboutMe {
+    margin-top: 80px;
+}
+#nameTitle {
+    font-size: 20pt;
+    color : #4c98af;
+    letter-spacing: -10px;
+    opacity:0;
+}
+#professionSubtitle {
+    letter-spacing: - 10px;
+    font-size: 10pt;
+    opacity:0;
+    margin-bottom:30px;
+}
+.circularPicture {
+    width: 150px;
+    height: 150px;
+    z-index:1;
+    border-radius: 75px;
+    -webkit-border-radius: 75px;
+    -moz-border-radius: 75px;
+    background: url(img/coverPict.jpg) no-repeat;
+    opacity:0;
+}
+#likeItem {
+    display:inline-block;
+    font-size: 25pt;
+    background: #4c98af;
+    padding: 10px 10px;
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 10px;
+    font-weight: bold;
+}
+#contactLine {
+    margin-top:80px;
+}
+#contactLine a {
+    color:gray;
+}
+#contactLine span {
+    margin-left:10px;
+    padding-top:10px;
+}
+#contactLine img {
+    height:30px;
+    width:30px;
+}
+#twitter, #scansharen, #softDev, #skill-vers {
+    -webkit-animation-delay:0s;
+    -moz-animation-delay:0s;
+    -ms-animation-delay:0s;
+    -o-animation-delay:0s;
+    animation-delay:0s;
+}
+#email, #kidoria, #webDev, #skill-proj {
+    -webkit-animation-delay:0.2s;
+    -moz-animation-delay:0.2s;
+    -ms-animation-delay:0.2s;
+    -o-animation-delay:0.2s;
+    animation-delay:0.2s;
+}
+#linkedin, #ice, #otherSkills, #skill-lang {
+    -webkit-animation-delay:0.4s;
+    -moz-animation-delay:0.4s;
+    -ms-animation-delay:0.4s;
+    -o-animation-delay:0.4s;
+    animation-delay:0.4s;
+}
+#github, #imaginarium {
+    -webkit-animation-delay:0.6s;
+    -moz-animation-delay:0.6s;
+    -ms-animation-delay:0.6s;
+    -o-animation-delay:0.6s;
+    animation-delay:0.6s;
+}
+#rougeor {
+    -webkit-animation-delay:0.8s;
+    -moz-animation-delay:0.8s;
+    -ms-animation-delay:0.8s;
+    -o-animation-delay:0.8s;
+    animation-delay:0.8s;
+}
+#test1 {
+    -webkit-animation-delay:1s;
+    -moz-animation-delay:1s;
+    -ms-animation-delay:1s;
+    -o-animation-delay:1s;
+    animation-delay:1s;
+}
+#test2 {
+    -webkit-animation-delay:1.2s;
+    -moz-animation-delay:1.2s;
+    -ms-animation-delay:1.2s;
+    -o-animation-delay:1.2s;
+    animation-delay:1.2s;
+}
+/*--------*/
+
+/* SKILLS */
+
+/*--------*/
+ #part-skills {
+    padding-top:100px;
+}
+.chart {
+    position: relative;
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+}
+.chart canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.techno {
+    display: inline-block;
+    line-height: 110px;
+    z-index: 2;
+}
+.center-vert {
+    margin-top: 40px;
+    color:#48BC97;
+    font-style:italic;
+    font-size:15px;
+}
+#softDev, #webDev, #otherSkills, #skill-vers, #skill-proj, #skill-lang {
+    opacity:0;
+}
+/*----------*/
+
+/* PROJECTS */
+
+/*----------*/
+ #part-projects {
+    padding-top:110px;
+    padding-bottom: 35px;
+    width:100%;
+}
+.left {
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s;
+}
+.right {
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -o-animation-duration:1s;
+    animation-duration:1s;
+}
+.iphone {
+    background: url('../img/iphone.png') center center no-repeat;
+    background-size: 238px 500px;
+    display:block;
+    width:238px;
+    height:500px;
+    position:relative;
+    top:-52px;
+    float:left;
+    opacity:0;
+    margin-bottom:-60px;
+}
+.ipad {
+    background: url('../img/ipad.png') center center no-repeat;
+    background-size: 534px 360px;
+    display:block;
+    width:534px;
+    height:360px;
+    position:relative;
+    top:0px;
+    float:left;
+    opacity:0;
+    margin-bottom:-60px;
+}
+.mac {
+    background: url('../img/mac.png') center center no-repeat;
+    background-size: 559px 340px;
+    display:block;
+    width:559px;
+    height:340px;
+    position:relative;
+    top:0px;
+    float:left;
+    opacity:0;
+    margin-bottom:-60px;
+}
+.iphone .screens {
+    overflow: hidden;
+    position: absolute;
+    top: 70px;
+    left: 16px;
+    height: 360px;
+    width: 210px;
+}
+.ipad .screens {
+    overflow: hidden;
+    position: absolute;
+    top: 19px;
+    left: 53px;
+    height: 320px;
+    width: 430px;
+}
+.mac .screens {
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 67px;
+    height: 265px;
+    width: 425px;
+}
+.iphone .screens img {
+    height: 360px;
+    width: 210px;
+}
+.ipad .screens img {
+    height: 320px;
+    width: 430px;
+}
+.mac .screens img {
+    height: 265px;
+    width: 440px;
+}
+#projectTxt {
+    position:relative;
+    top:-60px;
+    opacity:0;
+    left:100px;
+    max-width: 900px;
+    height:360px;
+}
+.projectSubtitle {
+    font-style:italic;
+    color:gray;
+    font-size:15px;
+}
+#nav-projects {
+    margin-top: 20px;
+    opacity:0;
+}
+#nav-projects > li > a {
+    color:gray;
+    font-size:16px;
+}
+#nav-projects .active > a {
+    color:#48BC97;
+}
+/*-----------------*/
+
+/*-- Coming Soon --*/
+
+/*-----------------*/
+ .comingSoon {
+    font-size:30px;
+    color: #4c98af;
+    margin-top:200px;
+}
