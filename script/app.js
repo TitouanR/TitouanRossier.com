@@ -1,15 +1,29 @@
+/*------*/
+/* DATA */
+/*------*/
+
 var likeItems = [
-    'making cool mobile apps',
-    'tweeting things',
-    'taking pictures',
-    'writing clean code',
-    'entrepreneurship'
+    {
+        item: 'creating mobile apps',
+        color: '#4864BC'
+    },
+    {
+        item: 'tweeting things',
+        color: '#4C98AF'
+    },
+    {
+        item: 'taking pictures',
+        color: '#48BC97'
+    },
+    {
+        item: 'writing clean code',
+        color: '#4864BC'
+    },
+    {
+        item: 'entrepreneurship',
+        color: '#4CC6C2'
+    }
 ];
-var shakeDuration = 2000;
-var scrollDuration = 800;
-var toCall = 0;
-var blueColor = '#4c98af';
-var didAlreadySeeProject = false;
 
 //TODO : Change project content to array
 
@@ -25,19 +39,25 @@ var iceTxt = '<h2>ICE<span class="projectSubtitle"> - bug tracking iPad App </sp
 var iceImg = '<img src="img/ice1.png"><img src="img/ice2.png"><img src="img/ice3.png">';
 
 
-var imaginariumTxt = '<h2>Imaginarium<span class="projectSubtitle"> - music festival iPhone App </span><span class="placeKeywords"> Personal project </span></h2><p><span class="blue"><a href="http://www.imaginariumfestival.com">Imaginarium</a></span> is a new music festival that will take place in Compiègne on Mai 2014.<br> The mobile application will allow to get all the informations about the festival, such as the schedule, the map...</p><br>We are currently working on the back office which aims to provide data for the future mobile apps<br><br>The project will be completed in January<br>You can see the sources on <b><a href="https://github.com/TitouanR/IF-BackOffice">GitHub</a></b><br><br><br><b>App :</b><span class="keywords">iOS7</span><span class="keywords">RESTFull API</span><span class="keywords">CoreData</span><span class="keywords">Twitter API</span><br><b>BackOffice : </b><span class="keywords">HTML5/CSS3</span><span class="keywords">jQuery</span><span class="keywords">PHP</span><span class="keywords">MySQL</span><br>';
+var imaginariumTxt = '<h2>Imaginarium<span class="projectSubtitle"> - music festival iPhone App </span><span class="placeKeywords"> Personal project </span></h2><p><span class="blue"><a href="http://www.imaginariumfestival.com">Imaginarium</a></span> is a new music festival that will take place in Compiègne on Mai 2014.<br> The mobile application will allow to get all the information about the festival, such as the schedule, the map...</p><br>We are currently working on the back office which aims to provide data for the future mobile apps<br><br>The project will be completed in January<br>You can see the sources on <b><a href="https://github.com/TitouanR/IF-BackOffice">GitHub</a></b><br><br><br><b>App :</b><span class="keywords">iOS7</span><span class="keywords">RESTFull API</span><span class="keywords">CoreData</span><span class="keywords">Twitter API</span><br><b>BackOffice : </b><span class="keywords">HTML5/CSS3</span><span class="keywords">jQuery</span><span class="keywords">PHP</span><span class="keywords">MySQL</span><br>';
 var imaginariumImg = '<img src="img/im1.png">';
 
 var rougeorTxt = '<h2>Rouge&Or<span class="projectSubtitle"> - Java web application </span><span class="placeKeywords"> School project </span></h2><p>Rouge&Or is a Spring MVC application. It is a website that offer a booking system for sports events of the Rouge&Or teams of the Laval University (Québec)<br>You can see the sources on <b><a href="https://github.com/TitouanR/IF-BackOffice">GitHub</a></b><br><br><span class="keywords">Java</span><span class="keywords">Spring</span><span class="keywords">XML</span>';
 var rougeorImg = '<img src="img/ro1.png"><img src="img/ro2.png">';
 
-$(document).ready(function () {
+var shakeDuration = 2000;
+var scrollDuration = 800;
+var toCall = 0;
+var blueColor = '#4c98af';
+var didAlreadySeeProject = false;
 
+$(document).ready(function () {
     init();
     launchAboutMeAnimation();
     setTimeout(function () {
         var toShow = getLikeItem(toCall);
-        $('#likeItem').html(toShow);
+        var text = toShow['item'];
+        $('#likeItem').html(text);
         shakeLikeItem();
     }, 2000);
 });
@@ -233,34 +253,34 @@ function projectsWayPoint() {
 
 /* contact button hover*/
 $('#twitter').hover(function () {
-    $(this).find('span').css("color", "#2daae1");
+    $(this).find('span').css('color', '#2daae1');
     $(this).find('img').attr('src', 'img/twitter.png');
 }, function () {
-    $(this).find('span').css("color", "gray");
+    $(this).find('span').css('color', 'gray');
     $(this).find('img').attr('src', 'img/twitterBW.png')
 });
 
 $('#email').hover(function () {
-    $(this).find('span').css("color", "#dc5c5c");
+    $(this).find('span').css('color', '#dc5c5c');
     $(this).find('img').attr('src', 'img/email.png')
 }, function () {
-    $(this).find('span').css("color", "gray");
+    $(this).find('span').css('color', 'gray');
     $(this).find('img').attr('src', 'img/emailBW.png')
 });
 
 $('#linkedin').hover(function () {
-    $(this).find('span').css("color", "#0173b2");
+    $(this).find('span').css('color', '#0173b2');
     $(this).find('img').attr('src', 'img/linkedin.png')
 }, function () {
-    $(this).find('span').css("color", "gray");
+    $(this).find('span').css('color', 'gray');
     $(this).find('img').attr('src', 'img/linkedinBW.png')
 });
 
 $('#github').hover(function () {
-    $(this).css("color", "black");
+    $(this).find('span').css('color', 'black');
     $(this).find('img').attr('src', 'img/github.png')
 }, function () {
-    $(this).css("color", "#gray");
+    $(this).find('span').css('color', 'gray');
     $(this).find('img').attr('src', 'img/githubBW.png')
 });
 
@@ -312,31 +332,38 @@ function removeActiveTab() {
 
 /* ABOUT ME  */
 function launchAboutMeAnimation() {
+
+    $('.navbar').addClass('animated fadeInDown').css('opacity', '1');
+
     $('#nameTitle').transition({
-        opacity: 1,
+        opacity: 1.0,
         letterSpacing: '0em'
     }, 1000, 'ease');
     $('#professionSubtitle').transition({
-        opacity: 1,
+        opacity: 1.0,
         letterSpacing: '0.3em'
     }, 1000, 'ease');
     $('.circularPicture').transition({
         opacity: 1.0
-    }, 1500, 'ease');
+    }, 2000, 'ease');
 
-    $('#twitter').addClass('animated bounceInRight');
-    $('#email').addClass('animated bounceInRight');
-    $('#linkedin').addClass('animated bounceInRight');
-    $('#github').addClass('animated bounceInRight');
+    $('#likeSection').addClass('animated fadeInUp').css('opacity', '1');
+
+    $('#twitter').addClass('animated bounceInUp').css('opacity', '1');
+    $('#email').addClass('animated bounceInUp').css('opacity', '1');
+    $('#linkedin').addClass('animated bounceInUp').css('opacity', '1');
+    $('#github').addClass('animated bounceInUp').css('opacity', '1');
 }
 
 function shakeLikeItem() {
 
-    $("#likeItem").toggleClass('animated wobble');
+    $("#likeItem").toggleClass('animated flipInX');
 
     if ($("#likeItem").hasClass('animated')) {
         var toShow = getLikeItem(toCall);
-        $('#likeItem').html(toShow);
+
+        $('#likeItem').html(toShow.item);
+        $('#likeItem').css('background', toShow.color);
     }
 
     setTimeout(shakeLikeItem, shakeDuration);
